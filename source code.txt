@@ -1,0 +1,376 @@
+<===========================HTML=====================================================>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Health Buddy</title>
+        <link rel="stylesheet" href="css/mpcss.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IF=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shorcut icon" href="images/icon1.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+        <section id="buddy">
+            <nav class="navigation">
+                <a href="#" class="logo"><span>MY</span>HealthBuddy</a>
+                <!--menu-->
+                <ul class="menu">
+                    <li><a href="#">Doctors For Me</a></li>
+                    <li><a href="#">Explore Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                </ul>
+                <!--Appnmt-btn-->
+                <a href="#" class="nav-appointment-btn">Appointments</a>
+            </nav>
+            <!--main-->
+            <div class="buddy-section">
+                <div class="btext">
+                    <h1>Your One Stop HealthCare Point</h1>
+                    <p>
+                        <!--description-->
+                        Get a lifebfiufbrfiofoisncosncdncdoicubidusbuieseifcne.
+                    </p>
+                    <div class="btext-btns">
+                        <a href="#">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Find Doctor
+                        </a>
+                        <a href="#">
+                            <i class="fa-solid fa-check"></i>
+                            Book Appointment
+                        </a>
+                        <a href="#">
+                            <i class="fa-sharp fa-solid fa-user-shield" style="color: #ffffff;"></i>
+                            Fitness Tracker
+                        </a>
+                    </div>
+                </div>
+                <div class="btext-img">
+                    <img src="images/bgmain.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!--search-->
+        <div class="appointment-search-container">
+            <h3>Find Best HealthCare</h3>
+            <div class="appointment-search">
+                <!--search-box-->
+                <div class="appo-search-box">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <input type="text" placeholder="Search Doctor Here">
+                </div>
+                <div class="appo-search-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" placeholder="Set Your Location">
+                </div>
+                <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+
+        <!--services-->
+        <section class="services">
+            <div class="info-box box1">
+                <div class="info-icon">
+                    <i class="fa-solid fa-kit-medical"></i>
+                </div>
+                <div class="info-text">
+                    <strong>
+                        Specialised Service
+                    </strong>
+                    <p>Get the best healthcare just from a click</p>
+                </div>
+            </div>
+            <div class="info-box box2">
+                <div class="info-icon">
+                    <i class="fa-regular fa-clock"></i>
+                </div>
+                <div class="info-text">
+                    <strong>
+                        24/7 Availability
+                    </strong>
+                    <p>Advance healthcare facilities available all the time</p>
+                </div>
+            </div>
+            <div class="info-box box3">
+                <div class="info-icon">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <div class="info-text">
+                    <strong>
+                        Track Your Fitness
+                    </strong>
+                    <p>Staying healthy and fit never been easier</p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<==============================CSS==================================================>
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+}
+a{
+    text-decoration:none;
+}
+ul{
+    list-style:none;
+}
+
+#buddy{
+    background-color:cyan;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 600px;
+}
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0px auto;
+    padding: 30px 0px;
+}
+.logo{
+    color:darkblue;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+.logo span{
+    background-color:blue;
+    color:#ffffff;
+    padding: 0px 5px;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: 40px; 
+}
+.menu li a{
+    margin:0px 20px;
+    color:crimson;
+    font-weight: 500;
+    transition: all ease 0.3s;
+}
+.menu li a:hover{
+    color:blueviolet;
+}
+.nav-appointment-btn{
+    height: 45px;
+    padding: 0px 20px;
+    border-radius: 4px;
+    background-color: rgb(84, 34, 123);
+    color:bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+.buddy-section{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0px auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    margin-top:auto;
+}
+.btext-img{
+    display: flex;
+}
+.btext-img img{
+    width: 100%;
+    height:100%;
+    max-height: 450px;
+    object-fit: contain;
+    object-position: center bottom;
+}
+.btext{
+    display:flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.btext h1{
+    font-size: 3.2rem;
+    color:darkmagenta;
+    line-height: 3.6rem;
+}
+.btext p{
+    color: brown;
+    margin: 15px 0px;
+    max-width: 500px;
+    letter-spacing: 0.3px;
+    line-height: 1.8rem;
+}
+.btext-btns{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.btext-btns a{
+    height: 45px;
+    padding: 0px 15px;
+    background-color:darkslategrey;
+    color:#ffffff;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+.btext-btns a i{
+    width: 18px;
+    height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgb(23, 11, 184);
+    margin-right: 8px;
+    font-size: 0.5rem;
+    padding-bottom: 1px;
+    color:#ffffff;
+}
+
+/*search*/
+.appointment-search-container{
+    max-width:1000px;
+    width:90%;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow:2px 16px 30px rgba(0,0,0,0.12);
+    z-index: 3;
+    position: relative;
+    margin-top: -60px;
+}
+.appointment-search-container h3{
+    color:indigo;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+.appointment-search{
+    display:grid;
+    grid-template-columns: 1fr 1fr 60px;
+    grid-gap: 10px;
+}
+.appo-search-box{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #f7fbff;
+    padding:15px;
+    border-radius:4px;
+    border:1px solid #e4e4e4;
+}
+.appo-search-box i{
+    color: #913a3a;
+    margin-right: 10px;
+}
+.appo-search-box input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.appointment-search button{
+    background-color: cornflowerblue;
+    color:#ffffff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor:pointer;
+}
+
+.services{
+    max-width:1200px;
+    width:90%;
+    margin:50px auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.info-box{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.info-icon{
+    width: 60px;
+    height:60px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-size:1.4rem;
+    border-radius: 5px;
+}
+.box1 .info-icon{
+    background-color: antiquewhite;
+}
+.box2 .info-icon{
+    background-color: rgb(215, 234, 250);
+}
+.box3 .info-icon{
+    background-color: rgb(199, 181, 243);
+}
+.info-text{
+    display:flex;
+    flex-direction: column;
+}
+.info-text strong{
+    color:midnightblue;
+    font-weight: 800;
+}
+.info-text p{
+    color:#535353;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+}

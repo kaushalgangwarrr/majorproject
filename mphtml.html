@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Health Buddy</title>
+        <link rel="stylesheet" href="css/mpcss.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IF=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shorcut icon" href="images/icon1.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </head>
+    <body>
+        <section id="buddy">
+            <nav class="navigation">
+                <a href="#" class="logo"><span>MY</span>HealthBuddy</a>
+                <!--menu-->
+                <input type="checkbox" class="menu-btn" id="menu-btn">
+                <label for="menu-btn" class="menu-icon">
+                    <span class="nav-icon"></span>
+                </label>
+                <ul class="menu">
+                    <li><a href="#">Doctors For Me</a></li>
+                    <li><a href="#">Explore Services</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                </ul>
+                <!--Appnmt-btn-->
+                <a href="#" class="nav-appointment-btn">Appointments</a>
+            </nav>
+            <!--main-->
+            <div class="buddy-section">
+                <div class="btext">
+                    <h1>Your One Stop HealthCare Point</h1>
+                    <p>
+                        <!--description-->
+                        Get a lifebfiufbrfiofoisncosncdncdoicubidusbuieseifcne.
+                    </p>
+                    <div class="btext-btns">
+                        <a href="#">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            Find Doctor
+                        </a>
+                        <a href="#">
+                            <i class="fa-solid fa-check"></i>
+                            Book Appointment
+                        </a>
+                        <a href="#">
+                            <i class="fa-sharp fa-solid fa-user-shield" style="color: #ffffff;"></i>
+                            Fitness Tracker
+                        </a>
+                    </div>
+                </div>
+                <div class="btext-img">
+                    <img src="images/bgmain.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!--search-->
+        <div class="appointment-search-container">
+            <h3>Find Best HealthCare</h3>
+            <div class="appointment-search">
+                <!--search-box-->
+                <div class="appo-search-box">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <input type="text" placeholder="Search Doctor Here">
+                </div>
+                <div class="appo-search-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" placeholder="Set Your Location">
+                </div>
+                <button onClick="getLocation()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <div id="search-output"></div>
+                <script src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
+                <script>
+                    var x= document.getElementById('search-output');
+                    function getLocation(){
+                        if(navigator.geolocation){
+                            navigator.geolocation.getCurrentPosition(showPosition);
+                        }
+                        else{
+                            x.innerHTML="Browser Not Supporting"
+                        }
+                    }
+                    function showPosition(position){
+                        //x.innerHTML = "latitude ="+position.coords.latitude
+                        //x.innerHTML += "<br/>"
+                        //x.innerHTML += "longitude ="+position.coords.longitude
+
+                        //var locAPI = "https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.coords.latitude+","+position.coords.longitude+"&sensor=true"
+                        //var locAPI = "https://geocode.maps.co/reverse?lat="+position.coords.latitude+"&lon="+position.coords.longitude+"&sensor=true"
+                        //x.innerHTML = locAPI;
+                        //$.get({
+                        //    url: locAPI,
+                        //    success:function(data){
+                        //        console.log(data);
+                                //x.innerHTML = data.results
+                        //    }
+                        //});
+                        var apiKey = 'AIzaSyD6d8HkcFafZCsES0o5aKg0Eyt_W4jWGn8';
+                        var radius = 5000; // Search within 5000 meters (adjust as needed)
+
+                        var apiUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${position.coords.latitude},${position.coords.longitude}&radius=${radius}&type=doctor&key=${apiKey}`;
+
+                        $.ajax({
+                            url: `http://localhost:3000/getNearbyDoctors?location=${location}&radius=${radius}`,
+                            type: 'GET',
+                            dataType: 'json',
+                            success: function(data) {
+                            console.log(data);
+                                // Process the data to get a list of nearby doctors
+                            },
+                            error: function(error) {
+                            console.error('Error:', error);
+                            }
+                    });
+                    }
+                </script>
+            </div>
+        </div>
+
+        <!--services-->
+        <section class="services">
+            <div class="info-box box1">
+                <div class="info-icon">
+                    <i class="fa-solid fa-kit-medical"></i>
+                </div>
+                <div class="info-text">
+                    <strong>
+                        Specialised Service
+                    </strong>
+                    <p>Get the best healthcare just from a click</p>
+                </div>
+            </div>
+            <div class="info-box box2">
+                <div class="info-icon">
+                    <i class="fa-regular fa-clock"></i>
+                </div>
+                <div class="info-text">
+                    <strong>
+                        24/7 Availability
+                    </strong>
+                    <p>Advance healthcare facilities available all the time</p>
+                </div>
+            </div>
+            <div class="info-box box3">
+                <div class="info-icon">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <div class="info-text">
+                    <strong>
+                        Track Your Fitness
+                    </strong>
+                    <p>Staying healthy and fit never been easier</p>
+                </div>
+            </div>
+        </section>
+        <section id="testimonials">
+            <div class="testimonials-heading">
+                <h3>Patients feedbacks</h3>
+                <a href="#"><i class="fa-solid fa-comments"></i></a>
+            </div>
+        </section>
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-company-box">
+                    <a href="#" class="logo"><span>My</span>HealthBuddy</a>
+                    <p>We care for you</p>
+                    <div class="footer-social-box">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-link-box">
+                    <strong>Main Links</strong>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-box">
+                    <strong>Main Links</strong>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-link-box">
+                    <strong>Main Links</strong>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--<div class="footer-bottom">
+                <span>
+                    Made By......
+                </span>-->
+            </div>
+        </footer>
+    </body>
+</html>
